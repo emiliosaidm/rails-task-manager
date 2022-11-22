@@ -1,0 +1,15 @@
+<div class="container d-flex flex-column p-3">
+<div class="form-group">
+  <%= form_with model: @task do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :details %>
+  <%= f.text_field :details %>
+  <%= f.radio_button :completed, "true" %>
+  <%= f.submit %>
+<% end %>
+</div>
+<a data-turbo-method="delete" data-turbo-confirm="Are you sure?" href="/tasks/<%=@task.id%>">
+  Delete
+</a>
+</div>
